@@ -1,0 +1,6 @@
+torch
+datasets
+tqdm
+transformers
+evaluate
+accelerate
