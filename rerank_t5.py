@@ -107,8 +107,7 @@ def rerank(dataset_name, model, tokenizer, bm25_runs, batch_size, ranking_file, 
 
 
     # load queries, corpus from hf hub
-    # change to username hub (redated for anonymity reasons for submission)
-    if 'username' == hf_user:
+    if 'dmrau' == hf_user:
         queries = ds_to_map(load_dataset(f'{hf_user}/{dataset_name}'), 'queries')
         corpus = ds_to_map(load_dataset(f'{hf_user}/{dataset_name}'), 'corpus')
     else:
@@ -176,9 +175,5 @@ if __name__ == "__main__":
     ranking_file = f'reranking/{bm25_runs}_{dataset_name}_{model_name.replace("/", "_")}'
     if not os.path.exists(ranking_file):
         print(ranking_file)
-        # change to username hub (redated for anonymity reasons for submission)
-        hf_user = 'username' if 'trec_dl' in dataset_name or 'cqadupstack' in dataset_name  else 'BeIR'
-        if hf_user == 'username':
-            print(f'{dataset_name} is not accessible on the hub due to preserving anonymity of the submission, this will change upon acceptence.' )
-            exit()
+        hf_user = 'dmrau' if 'trec_dl' in dataset_name or 'cqadupstack' in dataset_name  else 'BeIR'
         rerank(dataset_name, model, tokenizer, bm25_runs, batch_size, ranking_file, hf_user, template_run_file)

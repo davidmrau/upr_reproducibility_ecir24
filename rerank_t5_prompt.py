@@ -121,7 +121,7 @@ def rerank(dataset_name, model, tokenizer, bm25_runs, batch_size, ranking_file, 
     qrels_hf = load_dataset(f'{hf_user}/{dataset_name}-qrels')
     split = 'validation' if 'dataset_name' == 'msmarco' else 'test'
     qrels_file = dump_qrels(dataset_name, qrels_hf[split], folder='qrels')
-    if 'username' == hf_user:
+    if 'dmrau' == hf_user:
         queries = ds_to_map(load_dataset(f'{hf_user}/{dataset_name}'), 'queries')
         corpus = ds_to_map(load_dataset(f'{hf_user}/{dataset_name}'), 'corpus')
     else:
@@ -196,5 +196,5 @@ for _id in p2id:
     print(_id)
     ranking_file = f'reranking_prompts/{bm25_runs}_{dataset_name}_{model_name.replace("/", "_")}_prompt_{_id}'
     if not os.path.exists(ranking_file):
-        hf_user = 'username' if 'trec_dl' in dataset_name or 'cqadupstack' in dataset_name  else 'BeIR'
+        hf_user = 'dmrau' if 'trec_dl' in dataset_name or 'cqadupstack' in dataset_name  else 'BeIR'
         rerank(dataset_name, model, tokenizer, bm25_runs, batch_size, ranking_file, hf_user, p2id[_id])
