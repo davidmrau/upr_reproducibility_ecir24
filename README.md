@@ -1,4 +1,6 @@
-# Installing packages
+# upr_reproducibility_ecir24
+Query Generation using Large Language Models: A reproducibility study of unsupervised passage reranking# Installing packages
+
 
 To reproduce the UPR results on BeIR first install the requirements.txt using 
 ```bash
@@ -36,4 +38,20 @@ for this experiment run:
 for this experiment run:
 ```bash	
 	bash run_prompt.sh
+```
+
+
+Cite: 
+``
+@inproceedings{rau-query-generation,
+author = {Rau, David and Kamps, Jaap},
+year = {2024},
+month = {03},
+pages = {226-239},
+title = {Query Generation Using Large Language Models: A Reproducibility Study of Unsupervised Passage Reranking},
+isbn = {978-3-031-56065-1},
+doi = {10.1007/978-3-031-56066-8_19},
+booktitle={Advances in Information Retrieval
+46th European Conference on Information Retrieval},
+}
 ```
