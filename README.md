@@ -12,13 +12,6 @@ To reproduce the UPR results on BeIR first install the requirements.txt using
 pip3 install -r requirements.py
 ```
 
-## Reproducing UPR results on BeIR
-
-Next, make a GPU available in your env. and run the inference script:
-```bash
-bash run_beir.sh
-```
-
 ## Reproducing UPR results on BeIR bm25 top-100
 
 for this experiment run:
