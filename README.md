@@ -47,7 +47,7 @@ bash run_prompt.sh
 
 
 Cite: 
-``
+```
 @inproceedings{rau-query-generation,
 author = {Rau, David and Kamps, Jaap},
 year = {2024},
